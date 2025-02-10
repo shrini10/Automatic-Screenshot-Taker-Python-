@@ -1,0 +1,15 @@
+import pyautogui
+import time
+
+def take_screenshot():
+    timestamp = time.strftime("%Y%m%d-%H%M%S")
+    screenshot = pyautogui.screenshot()
+    screenshot.save(f"screenshot_{timestamp}.png")
+    print(f"📸 Screenshot saved as: screenshot_{timestamp}.png")
+
+interval = int(input("Enter the interval (seconds) for screenshots: "))
+print("Press Ctrl+C to stop taking screenshots.")
+
+while True:
+    take_screenshot()
+    time.sleep(interval)
